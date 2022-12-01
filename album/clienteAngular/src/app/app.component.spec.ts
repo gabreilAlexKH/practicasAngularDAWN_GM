@@ -6,11 +6,14 @@ import { ContactoComponent } from './contacto/contacto.component';
 import { CabeceraComponent } from './cabecera/cabecera.component';
 import { RedesComponent } from './redes/redes.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        HttpClientModule,
       ],
       declarations: [
         AppComponent,
