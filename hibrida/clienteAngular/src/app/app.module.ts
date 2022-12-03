@@ -9,11 +9,15 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatSidenavModule } from '@angular/material/sidenav';
+import { AlbumComponent } from './album/album.component';
+import { FotoComponent } from './foto/foto.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AlbumComponent,
+    FotoComponent
   ],
   imports: [
     BrowserModule,
