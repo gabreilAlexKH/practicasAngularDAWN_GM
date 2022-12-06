@@ -1,11 +1,13 @@
-export interface Navbar {
-
-    links:Nav[];
-    siteName:string;
-}
-
 export interface Nav{
 
-    href:string; 
+    href:string;
     text:string;
 }
+
+export interface Navbar {
+    
+    "site-name":string;
+	"links": Array<Nav>;
+
+}
+ 

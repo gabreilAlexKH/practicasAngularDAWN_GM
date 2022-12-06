@@ -1,28 +1,31 @@
 import { Component } from '@angular/core';
-import {NavbarService} from 'src/app/servicios/navbar.service';
-import {Navbar , Nav} from 'src/app/interfaz/navbar';
+
+import { NavbarService } from '../../servicios/navbar.service';
+import {Nav , Navbar} from "../../interfaz/navbar"
+
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-
 export class NavbarComponent {
 
+  navbar!:Navbar ;
+  sitename:string = "";
   links:Nav[] = [];
-  siteName:string = "";
 
-  constructor(private navbarService: NavbarService){
+  constructor(private navService: NavbarService){
 
-    navbarService.obtenerDatos().subscribe(respuesta => {
-            
-      let nav = respuesta as Navbar;
+    this.navService.obtenerDatos().subscribe(respuesta => {
 
-      this.links = nav.links;
-      this.siteName = nav.siteName;
-    })
+      this.navbar = respuesta as Navbar;
+      this.links = this.navbar["links"];
+      this.sitename = this.navbar["site-name"];
 
+    });
   }
+
+  
 
 }
