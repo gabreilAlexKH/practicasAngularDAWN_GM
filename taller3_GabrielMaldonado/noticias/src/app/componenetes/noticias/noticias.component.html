@@ -1,0 +1,18 @@
+
+    <mat-card  *ngFor="let noticia of noticias">
+        <mat-card-header>
+          <mat-card-title>{{noticia.title}}</mat-card-title>
+          <mat-card-subtitle>{{noticia.author}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="{{noticia.url_to_image}}" alt="imagen">
+        <mat-card-content>
+          <p>
+            {{noticia.description}}
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>LIKE</button>
+          <button mat-button>ABRIR</button>
+        </mat-card-actions>
+      </mat-card>
+      <br>
