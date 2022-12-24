@@ -13,9 +13,14 @@ export class AppComponent {
 
   constructor(private recursosService: RecursosService) {
     recursosService.obtenerDatos().subscribe(respuesta => {
-        this.fotos = respuesta as Array<Foto>
+
+          let arregloFotos = respuesta as Array<any>
+
+          arregloFotos.map( item => { item.url = 'http://localhost:4444/'+item.ruta.replace('public/','') } )
+
+          this.fotos = arregloFotos as Array<Foto>
       })
   }
 
-  
+
 }
