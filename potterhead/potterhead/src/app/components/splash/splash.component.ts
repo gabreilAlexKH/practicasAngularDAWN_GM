@@ -15,18 +15,17 @@ export class SplashComponent implements OnInit {
 
   ngOnInit() {
     this.resourcesService.getData().subscribe(response => {
-      
+
       let potterhead = localStorage.getItem("potterhead");
       if(!potterhead) {
         localStorage.setItem("potterhead", JSON.stringify(response));
       }
-
     })
 
     setTimeout(() => {
       this.router.navigate(['movies']);
     }, 1500);
-    
+
   }
 
 }
